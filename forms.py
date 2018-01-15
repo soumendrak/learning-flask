@@ -24,3 +24,8 @@ class LoginForm(Form):
                              DataRequired('Please enter your password'),
                              Length(min=8)])
     submit = SubmitField('Sign in')
+
+
+class AddressForm(Form):
+    address = StringField('Address', validators=[DataRequired('Please enter the address')])
+    submit = SubmitField('Search')
