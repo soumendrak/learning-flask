@@ -15,3 +15,12 @@ class SignupForm(Form):
                              DataRequired('Please enter your password'),
                              Length(min=8)])
     submit = SubmitField('Sign up')
+
+
+class LoginForm(Form):
+    email = StringField('Email', validators=[DataRequired(
+        'Please enter your email address'), Email('Please enter a valid email address')])
+    password = PasswordField('Password', validators=[
+                             DataRequired('Please enter your password'),
+                             Length(min=8)])
+    submit = SubmitField('Sign in')
